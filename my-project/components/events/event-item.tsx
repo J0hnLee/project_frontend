@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import classes from  './event-item.module.css';
-
+import Button from "../ui/button";
 
 
 function EventItem(props:any){
@@ -28,7 +28,7 @@ function EventItem(props:any){
                         <address>{formattedAddress  }</address>
                     </div>
                     <div className={classes.actions}>
-                        <Link href={exploreLink}>Explore Event</Link>
+                        <Button link={exploreLink}>Explore Event</Button>
                     </div>
             </div>
         </div>

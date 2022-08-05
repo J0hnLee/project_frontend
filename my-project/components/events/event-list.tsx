@@ -18,8 +18,6 @@ function EventList(props:any){
         />)}
       </ul>
       )
-
-
 }
 
 

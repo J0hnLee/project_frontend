@@ -4,32 +4,21 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 
-function LoginPage(){
-
-return (
-  <div>
-
-    <h1>Login Page</h1>
-
-    <form>
-    <p>email:</p>
-    <input type="text" name="email" />
-    <p>password</p>
-    <input type="text" name="password" />
-    <button type="submit">Submit</button>
-    <ul>
-        <li>
-            <Link href="/about">About</Link>
-        </li>
-        <li>
-            <Link href="/portfolio">portfolio</Link>
-        </li>
-    </ul>
-  </form>
-  </div>
+import { useSession, signIn, signOut } from "next-auth/react"
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user?.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
   )
-
 }
-
-
-export default LoginPage;

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getFeaturedEvents} from '../dummy-data';
 import EventList from '../components/events/event-list';
-
+import Component from './login';
 function HomePage(){
   const featuredEvents = getFeaturedEvents();
 return (
@@ -21,6 +21,7 @@ return (
       <div>
         <EventList items={featuredEvents}/>
       </div>
+      <Component></Component>
     </div>
   </div>
   )
