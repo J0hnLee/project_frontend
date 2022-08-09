@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import 'antd/dist/antd.css'
 import React, { useState } from 'react';
 import type { AppProps } from 'next/app'
@@ -55,13 +55,15 @@ function MyApp({ Component, pageProps:{session,...pageProps} }: AppProps) {
     
     <SessionProvider session={session}>
       <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)}>
-        <div className="logo" />
+        <Header />
+      <Layout>
+        <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background">
+          <div className="logo" />
         
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
-        <Header />
+        
 
         <Content style={{ margin: '0 16px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
@@ -73,6 +75,7 @@ function MyApp({ Component, pageProps:{session,...pageProps} }: AppProps) {
         </Content>
         <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>
+    </Layout>
     </Layout>
     </SessionProvider>
   

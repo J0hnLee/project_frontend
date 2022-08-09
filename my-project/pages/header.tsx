@@ -1,12 +1,18 @@
-import {Layout,Button, Menu} from 'antd';
+import {Layout,Button, Menu, AutoComplete,Input} from 'antd';
 import Link from 'next/link';
+import { UserOutlined } from '@ant-design/icons';
+import { Col, Row } from 'antd';
 const items = [
+    { label: (
+    <Link href="/" target="_blank" rel="noopener noreferrer">
+    首頁
+    </Link>), key: 'item-1' },
+
     { label: (
         <Link href="/about" target="_blank" rel="noopener noreferrer">
           關於
         </Link>
-      ), key: 'item-1' }, // 菜单项务必填写 key
-    { label: '限時搶購', key: 'item-2' },
+      ), key: 'item-2' }, // 菜单项务必填写 key
     {
       label: '廠商',
       key: 'submenu',
@@ -19,32 +25,33 @@ const items = [
 
 
 
-
-
 const Header = () => {
-
-
-   
-
-
     
     return (
-        <div>
+        
         <Layout.Header className="site-layout-background_1" style={{ padding: 0 }}>
-  
+        <Row>
+     
+        <AutoComplete
+        dropdownClassName="certain-category-search-dropdown"
+        dropdownMatchSelectWidth={500}
+        style={{ width: 250,  }}>
+        <Input.Search size="large" placeholder="input here" />
+        </AutoComplete>
+     
+       
         <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
 
         items={items}
-        // onClick={clickHandler}
+        // onClick={clickHandler}  
+        style={{ width: 400 }}
+        />
         
-      >
-        <Menu.Item key='setting_1'>
-            <Link href='/about'>關於</Link>
-        </Menu.Item>
-        <Menu.SubMenu key='SubMenu' title='Resources'>
+     
+        {/* <Menu.SubMenu key='SubMenu' title='Resources'>
             <Menu.Item key='setting:2'>
                 <Link href='/blog'>Blog</Link>
             </Menu.Item>
@@ -69,12 +76,11 @@ const Header = () => {
             Events
             </Link>
             </Menu.Item>
-        </Menu.SubMenu>
+        </Menu.SubMenu> */}
 
-        </Menu>
-
+        
+</Row>
         </Layout.Header>
-    </div>
     );
 }
 

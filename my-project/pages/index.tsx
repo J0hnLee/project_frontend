@@ -5,20 +5,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getFeaturedEvents} from '../dummy-data';
 import EventList from '../components/events/event-list';
-<<<<<<< Updated upstream
 import Login from './login';
 import React from 'react';
 import { DatePicker } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
-=======
-import Component from './login';
-import Result from 'ant-design-pro/lib/Result';
-import 'ant-design-pro/dist/ant-design-pro.css'; // 统一引入样式
-//import '@ant-design/pro-components/dist/components.css';
-import '@Ant-Design/pro-form/dist/form.css'
-import '@Ant-Design/pro-card/dist/card.css'
-import { ProForm, ProFormText } from '@ant-design/pro-components';
->>>>>>> Stashed changes
 
 function HomePage(){
   const featuredEvents = getFeaturedEvents();
@@ -33,20 +23,8 @@ return (
       <div>
         <EventList items={featuredEvents}/>
       </div>
-<<<<<<< Updated upstream
       <Login/>
       <DatePicker/>
-=======
-      <Component></Component>
-      <Result type="success" />
-      <ProForm
-      onFinish={async (values) => {
-        console.log(values);
-      }}
-    >
-      <ProFormText name="name" label="姓名" />
-    </ProForm>
->>>>>>> Stashed changes
     </div>
   </div>
   )
