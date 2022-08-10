@@ -13,9 +13,9 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu ,Button} from 'antd';
-import { AutoComplete } from 'antd';
+import {useSession} from "next-auth/react";
 
-import Header from './header';
+import Header from '../components/header/header';
 
 
 const { Content, Footer, Sider } = Layout;
@@ -56,26 +56,23 @@ function MyApp({ Component, pageProps:{session,...pageProps} }: AppProps) {
     <SessionProvider session={session}>
       <Layout style={{ minHeight: '100vh' }}>
         <Header />
-      <Layout>
+        <Layout>
         <Sider collapsible collapsed={collapsed} onCollapse={value => setCollapsed(value)} width={200} className="site-layout-background">
           <div className="logo" />
         
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
-        
-
         <Content style={{ margin: '0 16px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
             <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>John</Breadcrumb.Item>
           </Breadcrumb>
-          
           <Component {...pageProps} />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>Leadway Design ©2022 Created by John Lee</Footer>
+        </Layout>
       </Layout>
-    </Layout>
     </Layout>
     </SessionProvider>
   

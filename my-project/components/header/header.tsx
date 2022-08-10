@@ -2,6 +2,7 @@ import {Layout,Button, Menu, AutoComplete,Input} from 'antd';
 import Link from 'next/link';
 import { UserOutlined } from '@ant-design/icons';
 import { Col, Row } from 'antd';
+import Login from './login';
 const items = [
     { label: (
     <Link href="/" target="_blank" rel="noopener noreferrer">
@@ -49,37 +50,10 @@ const Header = () => {
         // onClick={clickHandler}  
         style={{ width: 400 }}
         />
+    
+        <Login />
         
-     
-        {/* <Menu.SubMenu key='SubMenu' title='Resources'>
-            <Menu.Item key='setting:2'>
-                <Link href='/blog'>Blog</Link>
-            </Menu.Item>
-            <Menu.Item key='setting:3'>
-                <Link href='/faq'>FAQ</Link>
-            </Menu.Item>
-            <Menu.Item key='setting:4'>
-                <Link href='/events'>
-            Events
-            </Link>
-            </Menu.Item>
-        </Menu.SubMenu>
-        <Menu.SubMenu key='SubMenu_2' title='trans'>
-            <Menu.Item key='setting:5'>
-                <Link href='/blog'>Blog</Link>
-            </Menu.Item>
-            <Menu.Item key='setting:6'>
-                <Link href='/faq'>FAQ</Link>
-            </Menu.Item>
-            <Menu.Item key='setting:7'>
-                <Link href='/events'>
-            Events
-            </Link>
-            </Menu.Item>
-        </Menu.SubMenu> */}
-
-        
-</Row>
+        </Row>
         </Layout.Header>
     );
 }
