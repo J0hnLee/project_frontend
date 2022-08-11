@@ -37,6 +37,7 @@ function AllEventsPage(){
     " />}
     />
         <h1>All Events</h1>
+        
       </div>
       )
     

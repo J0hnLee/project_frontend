@@ -23,7 +23,7 @@ return (
       <div>
         <EventList items={featuredEvents}/>
       </div>
-      <Login/>
+    
     </div>
   </div>
   )
