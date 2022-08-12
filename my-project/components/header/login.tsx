@@ -3,30 +3,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import {Button} from 'antd' ;
+import {Button,Col,Row} from 'antd' ;
 import { useSession, signIn, signOut } from "next-auth/react";
 import 'tailwindcss/tailwind.css';
+import { colors } from '@mui/material'
 
 export default function Component() {
   const { data: session } = useSession()
   if (session) {
     return (
       <>
-        <span className="text-white">Signed in as {session.user?.email}</span> <br />
-        <Button onClick={() => signOut()} >
+      <Row>
+        <span className="text-white" style={{ marginLeft:10}}>Signed in as {session.user?.email}</span> <br />
+        <Button onClick={() => signOut()} style={{ margin:15}}>
           <span className='text-white'>Sign out</span>
-          
           </Button>
-        
+        </Row>
       </>
     )
   }
   return (
     <>
-      <span className='text-white'>Not signed in</span> <br />
-      <Button onClick={() => signIn()} >
+    
+    <Row>
+      <span className='text-white' style={{ marginLeft:10}}>Not signed in</span> <br />
+      <Button onClick={() => signIn()} style={{ margin:15}}>
       <span className='text-white'>Sign In</span>
-        </Button>
+        </Button >
+    </Row>
     </>
   )
 }

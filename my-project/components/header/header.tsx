@@ -1,7 +1,7 @@
 import {Layout,Button, Menu, AutoComplete,Input} from 'antd';
 import Link from 'next/link';
 import { UserOutlined } from '@ant-design/icons';
-import { Col, Row } from 'antd';
+import { Col, Row ,Divider} from 'antd';
 import Login from './login';
 const items = [
     { label: (
@@ -31,16 +31,10 @@ const Header = () => {
     return (
         
         <Layout.Header className="site-layout-background_1" style={{ padding: 0 }}>
-        <Row>
+        
      
-        <AutoComplete
-        dropdownClassName="certain-category-search-dropdown"
-        dropdownMatchSelectWidth={500}
-        style={{ width: 250,  }}>
-        <Input.Search size="large" placeholder="input here" />
-        </AutoComplete>
-     
-       
+        
+       <Row>
         <Menu
         theme="dark"
         mode="horizontal"
@@ -48,12 +42,19 @@ const Header = () => {
 
         items={items}
         // onClick={clickHandler}  
-        style={{ width: 400 }}
+        style={{ marginLeft: 10, marginRight: 'auto' }}
         />
-    
+       
+        <AutoComplete
+        dropdownClassName="certain-category-search-dropdown"
+        dropdownMatchSelectWidth={500}
+        style={{ width: 150, marginTop:10, marginLeft: 10  }}>
+        <Input.Search size="large" placeholder="input here" />
+        </AutoComplete>
         <Login />
-        
         </Row>
+        
+       
         </Layout.Header>
     );
 }
